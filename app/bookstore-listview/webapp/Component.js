@@ -5,7 +5,7 @@ sap.ui.define(
 
         return Component.extend("cviana.com.br.bookstorelistview.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json"   
             }
         });
     }

@@ -20,7 +20,7 @@
         "uri": "/odata/v4/bookstore/",
         "type": "OData",
         "settings": {
-          "annotations": [],
+          "annotations": [], 
           "odataVersion": "4.01"
         }
       }
