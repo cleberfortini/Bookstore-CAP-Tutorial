@@ -1,5 +1,5 @@
 {
-  "_version": "1.83.0",
+  "sversion": "1.83.0",
   "sap.app": {
     "id": "cviana.com.br.bookstorelistview",
     "type": "application",
@@ -7,7 +7,7 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
+    "title": "BookStore",
     "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
@@ -116,7 +116,8 @@
                     "type": "ResponsiveTable"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           }
         },
