@@ -5,27 +5,22 @@ annotate service.Books with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'title',
+                Label : '{i18n>Titulo}',
                 Value : title,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'genre',
-                Value : genre,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'publisheAt',       
+                Label : '{i18n>PrublicadoEm}',       
                 Value : publisheAt,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'pages',
+                Label : '{i18n>Pginas}',
                 Value : pages,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'price',
+                Label : '{i18n>Preco}',
                 Value : price,
             },
         ],
@@ -34,8 +29,20 @@ annotate service.Books with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneratedFacet1',
-            Label : 'General Information',
+            Label : 'Informações Gerais',
             Target : '@UI.FieldGroup#GeneratedGroup',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Informações adicionais',
+            ID : 'InformaesAdicionais',
+            Target : '@UI.FieldGroup#InformaesAdicionais',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : '{i18n>Capitulos}',
+            ID : 'i18nCapitulos',
+            Target : 'Chapters/@UI.LineItem#i18nCapitulos',
         },
     ],
     UI.LineItem : [
@@ -72,6 +79,40 @@ annotate service.Books with @(
     UI.SelectionFields : [
         price,
     ],
+    UI.HeaderInfo : {
+        TypeName : 'Book',
+        TypeNamePlural : 'Books',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : title,
+        },
+        Description : {
+            $Type : 'UI.DataField',
+            Value : genre,
+        },
+        TypeImageUrl : 'sap-icon://education',
+    },
+    UI.FieldGroup #InformaesAdicionais : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : author.createdAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : author.createdBy,
+            },
+        ],
+    },
 );
 
 annotate service.Books with {
@@ -93,6 +134,31 @@ annotate service.Books with {
 };
 
 annotate service.Books with {
-    price @Common.Label : 'price'
+    price @Common.Label : '{i18n>Preco}'
 };
+
+annotate service.Chapters with @(
+    UI.LineItem #i18nCapitulos : [
+        {
+            $Type : 'UI.DataField',
+            Value : book.Chapters.number,
+            Label : 'number',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : book.Chapters.pages,
+            Label : 'pages',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : book.Chapters.title,
+            Label : 'title',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : book.Chapters.book.author.name,
+            Label : 'name',
+        },
+    ]
+);
 
