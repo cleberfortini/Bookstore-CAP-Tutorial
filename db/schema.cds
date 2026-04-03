@@ -20,12 +20,12 @@ entity Books : cuid, managed {
 }
 
 entity BookStatus {
-    key code        : String(1) enum {
+    key code : String(1) enum {
             Avaliable = 'A';
             Low_Stock = 'L';
             Unavailable = 'U';
         }
-        critical    : Integer;
+        criticality : Integer;
         displayText : String;
 }
 

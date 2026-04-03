@@ -1,3 +1,4 @@
-code,critical,displayText
-A,56,displayText-9768714
-L,46,displayText-18713919
+code,criticality,displayText
+U,1,Unavailable
+L,2,Low Stock
+A,3,Available

@@ -68,23 +68,24 @@ annotate service.Books with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : '{i18n>Preo}',
+            Label : '{i18n>Preco}',
             Value : price,
         },
         {
             $Type : 'UI.DataField',
             Value : createdAt,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : status_code,
-            Label : 'Disponibilidade',
-            Criticality : status.critical,
+            Label : '{i18n>CriadoPor}',
         },
         {
             $Type : 'UI.DataField',
             Value : stock,
             Label : 'stock',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : status_code,
+            Label : 'status_code',
+            Criticality : status.criticality,
         },
     ],
     UI.SelectionFields : [
