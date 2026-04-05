@@ -23,6 +23,11 @@ annotate service.Books with @(
                 Label : '{i18n>Preco}',
                 Value : price,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : genre,
+                Label : 'genre',
+            },
         ],
     },
     UI.Facets : [
@@ -48,12 +53,6 @@ annotate service.Books with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Value : status_code,
-            Label : 'Disponibilidade',
-            Criticality : status.criticality,
-        },
-        {
-            $Type : 'UI.DataField',
             Label : '{i18n>Titulo}',
             Value : title,
         },
@@ -61,6 +60,17 @@ annotate service.Books with @(
             $Type : 'UI.DataField',
             Label : '{i18n>Gnero}',
             Value : genre,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : status_code,
+            Label : 'Disponibilidade',
+            Criticality : status.criticality,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : stock,
+            Label : 'Estoque',
         },
         {
             $Type : 'UI.DataField',
@@ -81,11 +91,6 @@ annotate service.Books with @(
             $Type : 'UI.DataField',
             Value : createdAt,
             Label : '{i18n>CriadoPor}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : stock,
-            Label : 'Estoque',
         },
     ],
     UI.SelectionFields : [
@@ -125,6 +130,11 @@ annotate service.Books with @(
             {
                 $Type : 'UI.DataField',
                 Value : author.createdBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : stock,
+                Label : 'stock',
             },
         ],
     },

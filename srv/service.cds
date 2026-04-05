@@ -5,6 +5,8 @@ service BookstoreService {
     entity Authors    as projection on db.Authors;
     entity Chapters   as projection on db.Chapters;
     entity BookStatus as projection on db.BookStatus;
-
-
 }
+
+annotate BookstoreService.Books with @odata.draft.enabled;
+
+
